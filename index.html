@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>스크립트 태그 추가해서 리액트 앱 생성하기</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+
+<script>
+    const h3 = React.createElement("h3",
+        {
+            id: "title",
+            onMouseEnter: () => console.log("마우스 들어옴")
+        },
+        "안녕 나는 h3이야"
+    )
+    const btn = React.createElement("button", {
+        onClick: () => console.log("난 클릭되었어"),
+        style: {
+            backgroundColor: "tomato",
+        }
+    }, "선택")
+    const container = React.createElement("div", null, [h3, btn])
+
+    const root = document.getElementById("root")
+    ReactDOM.render(container, root)
+</script>
+</html>
